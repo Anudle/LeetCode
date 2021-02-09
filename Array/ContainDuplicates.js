@@ -1,16 +1,14 @@
 var containsDuplicate = function(nums) {
-  let map = {}
+  let mySet = new Set()
   let response = false
   nums.forEach(num => {
-    if (!map[num]) {
-      map[num] = true
-    } else {
+    if (mySet.has(num)) {
       response = true
+    } else {
+      mySet.add(num)
     }
-  }) 
-  return response
-}; 
-
+  })
+}
 
 console.log(containsDuplicate([1,2,3,1]))
 //Input: [1,2,3,1]
